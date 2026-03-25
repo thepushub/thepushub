@@ -59,11 +59,10 @@
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-navy/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
-        <a href="#inicio" class="flex-shrink-0 cursor-pointer">
-          <div class="flex flex-col gap-0">
-            <span class="text-lg font-bold text-navy leading-tight">The Push Hub</span>
-            <span class="text-xs text-navy/60">Derecho a ser exitoso</span>
-          </div>
+        <a href="#inicio" class="flex-shrink-0 cursor-pointer" style="font-family:'Outfit',sans-serif; display:flex; flex-direction:column; line-height:1;">
+          <span style="font-size:9px; font-weight:900; letter-spacing:0.45em; color:rgba(15,76,129,0.4); text-transform:uppercase; margin-bottom:2px;">The ·</span>
+          <span style="font-size:22px; font-weight:900; letter-spacing:-0.04em; color:#0F4C81; text-transform:uppercase; line-height:0.92;">PUSH</span>
+          <span style="font-size:22px; font-weight:900; letter-spacing:-0.04em; color:#1E90FF; text-transform:uppercase; line-height:0.92;">HUB</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="#problema" class="nav-link text-sm font-500 text-ink/70 hover:text-navy transition-colors cursor-pointer">El Reto</a>
@@ -92,37 +91,243 @@
   </nav>
 
   <!-- HERO -->
-  <section id="inicio" class="hero-bg min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <section id="inicio" class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden" style="background: linear-gradient(135deg, #060E1A 0%, #0A2040 40%, #0F4C81 100%);">
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 right-0 w-[600px] h-[600px] rounded-full opacity-10" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+
+      <!-- Barra superior: personas viendo + cupos -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+        <div class="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 rounded-full px-4 py-2 backdrop-blur-sm animate-pulse">
+          <div class="w-2 h-2 rounded-full bg-red-400"></div>
+          <span class="text-red-300 text-xs font-500" style="font-family:'Rubik',sans-serif;">
+            <span id="live-viewers">17</span> personas viendo esta página ahora
+          </span>
+        </div>
+        <div class="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 rounded-full px-4 py-2 backdrop-blur-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="text-amber-300 text-xs font-500" style="font-family:'Rubik',sans-serif;">
+            Oferta termina en <span id="countdown-inline" class="font-700"></span>
+          </span>
+        </div>
+      </div>
+
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Columna izquierda: texto -->
         <div class="fade-up">
-          <div class="inline-flex items-center gap-2 mb-6">
-            <div class="w-8 h-px bg-electric"></div>
-            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase" style="font-family: 'Outfit', sans-serif;">Agencia de Marketing · Barcelona</span>
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="bg-electric/20 text-electric text-xs font-700 px-3 py-1 rounded-full uppercase tracking-wider" style="font-family:'Outfit',sans-serif;">Valorado en €800</span>
+            <span class="text-white/40 text-xs" style="font-family:'Rubik',sans-serif;">· Hoy gratis para tu negocio</span>
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-900 text-white leading-[1.1] tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">
-            El derecho a ser<br>
-            <span class="text-electric">exitoso</span><br>
-            es de todos.
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-900 text-white leading-[1.1] tracking-[-0.03em] mb-5" style="font-family:'Outfit',sans-serif;">
+            Tu competencia ya sabe<br>
+            a quién venderle.<br>
+            <span style="background: linear-gradient(90deg, #1E90FF, #60B8FF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">¿Y tú?</span>
           </h1>
-          <p class="text-white/75 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg" style="font-family: 'Rubik', sans-serif;">
-            No importa tu presupuesto. Tu negocio merece una estrategia ganadora. Investigamos primero, ejecutamos después. Nos adaptamos a tu realidad. Por eso nuestros clientes crecen.
+
+          <p class="text-white/55 text-lg leading-relaxed mb-8 max-w-lg" style="font-family:'Rubik',sans-serif;">
+            Este mes haremos <strong class="text-white font-600">20 estudios de mercado gratis</strong> — el mismo análisis que las grandes marcas pagan miles por tener. DOFA, benchmarking, segmentación, estrategia. Todo. Sin compromiso.
           </p>
-          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+
+          <!-- Barra de cupos -->
+          <div class="mb-8 max-w-md">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-white/50 text-xs" style="font-family:'Rubik',sans-serif;">Cupos ocupados este mes</span>
+              <span class="text-white font-700 text-sm" style="font-family:'Outfit',sans-serif;"><span id="spots-taken">14</span> / 20</span>
+            </div>
+            <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div id="spots-bar" class="h-full rounded-full transition-all duration-1000" style="width: 70%; background: linear-gradient(90deg, #1E90FF, #FF6B6B);"></div>
+            </div>
+            <p class="text-amber-400/80 text-xs mt-2 font-500" style="font-family:'Rubik',sans-serif;">
+              ⚡ Quedan <span id="spots-left" class="font-700">6</span> cupos — Se están agotando rápido
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-start gap-4 mb-8">
+            <a href="#contacto" class="group inline-flex items-center gap-3 text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer hover:scale-105 relative overflow-hidden" style="font-family:'Outfit',sans-serif; background: linear-gradient(135deg, #1E90FF, #1060CC); box-shadow: 0 8px 32px rgba(30,144,255,0.4);">
+              <span class="relative z-10">Quiero mi Estudio Gratis</span>
+              <svg class="relative z-10" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+            </a>
+            <a href="#proceso" class="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm font-500 px-4 py-4 transition-colors cursor-pointer" style="font-family:'Rubik',sans-serif;">
+              Ver qué incluye
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 text-white/30 text-xs" style="font-family:'Rubik',sans-serif;">
+            <span class="flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sin compromiso</span>
+            <span class="flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Entrega en 10 días</span>
+            <span class="flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 100% confidencial</span>
+          </div>
+        </div>
+
+        <!-- Columna derecha: card con countdown -->
+        <div class="fade-up fade-up-delay-2 hidden lg:flex flex-col items-center gap-6">
+
+          <!-- Countdown grande -->
+          <div class="text-center">
+            <p class="text-white/40 text-xs uppercase tracking-widest mb-4" style="font-family:'Outfit',sans-serif;">La oferta se cierra en</p>
+            <div id="countdown" class="flex items-center gap-3">
+              <div class="flex flex-col items-center">
+                <span id="cd-days" class="text-5xl font-900 text-white" style="font-family:'Outfit',sans-serif;">00</span>
+                <span class="text-white/30 text-[10px] uppercase tracking-widest mt-1" style="font-family:'Rubik',sans-serif;">Días</span>
+              </div>
+              <span class="text-white/20 text-3xl font-300 -mt-5">:</span>
+              <div class="flex flex-col items-center">
+                <span id="cd-hours" class="text-5xl font-900 text-white" style="font-family:'Outfit',sans-serif;">00</span>
+                <span class="text-white/30 text-[10px] uppercase tracking-widest mt-1" style="font-family:'Rubik',sans-serif;">Horas</span>
+              </div>
+              <span class="text-white/20 text-3xl font-300 -mt-5">:</span>
+              <div class="flex flex-col items-center">
+                <span id="cd-mins" class="text-5xl font-900 text-white" style="font-family:'Outfit',sans-serif;">00</span>
+                <span class="text-white/30 text-[10px] uppercase tracking-widest mt-1" style="font-family:'Rubik',sans-serif;">Min</span>
+              </div>
+              <span class="text-white/20 text-3xl font-300 -mt-5 animate-pulse">:</span>
+              <div class="flex flex-col items-center">
+                <span id="cd-secs" class="text-5xl font-900 text-electric" style="font-family:'Outfit',sans-serif;">00</span>
+                <span class="text-electric/50 text-[10px] uppercase tracking-widest mt-1" style="font-family:'Rubik',sans-serif;">Seg</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card resumen -->
+          <div class="relative w-full max-w-sm rounded-2xl p-6 border border-white/10 backdrop-blur-md" style="background: rgba(255,255,255,0.04);">
+            <div class="text-center mb-5">
+              <p class="text-white/40 text-[10px] uppercase tracking-widest mb-1" style="font-family:'Outfit',sans-serif;">Incluye</p>
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex items-center gap-3 bg-white/5 rounded-lg px-3 py-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-white/60 text-xs" style="font-family:'Rubik',sans-serif;">Análisis DOFA completo</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-lg px-3 py-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-white/60 text-xs" style="font-family:'Rubik',sans-serif;">Benchmarking de competencia</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-lg px-3 py-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-white/60 text-xs" style="font-family:'Rubik',sans-serif;">Segmentación de audiencia</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-lg px-3 py-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-white/60 text-xs" style="font-family:'Rubik',sans-serif;">Estrategia de canales</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-lg px-3 py-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span class="text-white/60 text-xs" style="font-family:'Rubik',sans-serif;">Keywords y oportunidades</span>
+              </div>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-white/25 text-xs line-through" style="font-family:'Rubik',sans-serif;">Valor: €800</span>
+              </div>
+              <span class="text-electric font-900 text-2xl" style="font-family:'Outfit',sans-serif;">GRATIS</span>
+            </div>
+            <!-- Badge -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-500 text-white text-[10px] font-700 px-4 py-1 rounded-full shadow-lg uppercase tracking-wider" style="font-family:'Outfit',sans-serif;">
+              Solo este mes
+            </div>
+          </div>
+
+          <!-- Notificación social proof -->
+          <div id="social-proof-toast" class="w-full max-w-sm bg-white/5 border border-white/10 backdrop-blur-md rounded-xl px-4 py-3 flex items-center gap-3 transition-all duration-500 opacity-0 translate-y-4">
+            <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p id="proof-name" class="text-white/80 text-xs font-600" style="font-family:'Outfit',sans-serif;">María G.</p>
+              <p class="text-white/40 text-[10px]" style="font-family:'Rubik',sans-serif;">acaba de solicitar su estudio gratis</p>
+            </div>
+            <span id="proof-time" class="text-white/25 text-[10px] ml-auto" style="font-family:'Rubik',sans-serif;">hace 3 min</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section id="oferta" class="hero-bg py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="fade-up">
+            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Primer Mes</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Estudio de Mercado<br><span class="text-electric">Gratuito.</span></h2>
+            <p class="text-white/70 text-lg leading-relaxed mb-8" style="font-family: 'Rubik', sans-serif;">Para los primeros clientes, hacemos tu estudio completo sin costo. Nuestra forma de demostrar valor.</p>
+            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3 mb-8">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <p class="text-white/80 text-sm" style="font-family: 'Rubik', sans-serif;">Normalmente <span class="text-electric font-600">€800</span>. Para ti, gratis.</p>
+            </div>
             <a href="#contacto" class="inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-electric/30 cursor-pointer" style="font-family: 'Outfit', sans-serif;">
-              Obtén tu Estudio Gratis
+              Solicitar Ahora
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <p class="text-white/50 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Entregado en 10 días hábiles · Sin compromiso · Sin presión</p>
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-            <div class="w-2 h-2 rounded-full bg-electric animate-pulse"></div>
-            <span class="text-white/70 text-xs font-500" style="font-family: 'Rubik', sans-serif;">Limitado a 5 nuevos clientes por mes</span>
-          </div>
         </div>
-        <div class="fade-up fade-up-delay-2 hidden lg:flex justify-center items-center">
-          <div class="relative w-full max-w-[520px] h-96 rounded-3xl overflow-hidden shadow-2xl shadow-navy/20">
-            <img src="hero-image.jpeg" alt="Market research and data analysis" class="w-full h-full object-cover" />
+        <div class="fade-up fade-up-delay-2">
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+            <h3 class="text-white font-700 text-lg mb-6" style="font-family: 'Outfit', sans-serif;">Incluye:</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis DOFA</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Fortalezas, debilidades, oportunidades, amenazas.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Benchmarking Competitivo</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Top 3 competidores analizados en profundidad.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Segmentación de Audiencia</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Perfiles detallados de clientes ideales.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis de Keywords</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Búsquedas de tu audiencia y oportunidades SEO.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Estrategia de Canales</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Dónde está tu audiencia y cómo llegar.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">3 Oportunidades Clave</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Tus mayores oportunidades con acciones concretas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <p class="text-white/60 text-sm" style="font-family: 'Rubik', sans-serif;">Entregado en <span class="text-white font-600">10 días hábiles</span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -264,82 +469,6 @@
     </div>
   </section>
 
-  <!-- OFERTA -->
-  <section id="oferta" class="hero-bg py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <div class="fade-up">
-            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Primer Mes</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Estudio de Mercado<br><span class="text-electric">Gratuito.</span></h2>
-            <p class="text-white/70 text-lg leading-relaxed mb-8" style="font-family: 'Rubik', sans-serif;">Para los primeros clientes, hacemos tu estudio completo sin costo. Nuestra forma de demostrar valor.</p>
-            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3 mb-8">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <p class="text-white/80 text-sm" style="font-family: 'Rubik', sans-serif;">Normalmente <span class="text-electric font-600">€3,000–€5,000</span>. Gratis.</p>
-            </div>
-            <a href="#contacto" class="inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-electric/30 cursor-pointer" style="font-family: 'Outfit', sans-serif;">
-              Solicitar Ahora
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="fade-up fade-up-delay-2">
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-            <h3 class="text-white font-700 text-lg mb-6" style="font-family: 'Outfit', sans-serif;">Incluye:</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis DOFA</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Fortalezas, debilidades, oportunidades, amenazas.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Benchmarking Competitivo</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Top 3 competidores analizados en profundidad.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Segmentación de Audiencia</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Perfiles detallados de clientes ideales.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis de Keywords</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Búsquedas de tu audiencia y oportunidades SEO.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Estrategia de Canales</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Dónde está tu audiencia y cómo llegar.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
-                <div>
-                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">3 Oportunidades Clave</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Tus mayores oportunidades con acciones concretas.</p>
-                </div>
-              </div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <p class="text-white/60 text-sm" style="font-family: 'Rubik', sans-serif;">Entregado en <span class="text-white font-600">10 días hábiles</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FILOSOFÍA -->
   <section class="bg-navy py-20 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -375,13 +504,16 @@
             </div>
             <div class="flex items-center gap-3">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Limitado a 5 clientes/mes</p>
+              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Limitado a 20 estudios gratis/mes</p>
             </div>
           </div>
         </div>
         <div class="fade-up fade-up-delay-2">
           <div class="bg-white rounded-2xl p-8 shadow-sm">
             <form id="contact-form" class="space-y-6" onsubmit="handleSubmit(event)">
+              <input type="hidden" name="access_key" value="TU_KEY_WEB3FORMS">
+              <input type="hidden" name="subject" value="Nueva solicitud - Estudio de Mercado Gratis">
+              <input type="hidden" name="from_name" value="The Push Hub Landing">
               <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
               <input type="email" id="email" name="email" required placeholder="Email empresarial" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
               <select id="reto" name="reto" required class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm cursor-pointer" style="font-family: 'Rubik', sans-serif;">
@@ -415,9 +547,19 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8 mb-12">
         <div>
-          <div class="flex flex-col gap-0 mb-3">
-            <span class="text-lg font-bold text-navy leading-tight">The Push Hub</span>
-            <span class="text-xs text-navy/60">Derecho a ser exitoso</span>
+          <div class="flex items-center gap-2 mb-3">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-navy">
+              <line x1="28" y1="15" x2="28" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <path d="M 28,15 Q 28,25 40,30 Q 52,35 52,45 Q 52,55 40,60 Q 28,65 28,55" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="48" y1="15" x2="48" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <line x1="72" y1="15" x2="72" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <line x1="48" y1="50" x2="72" y2="50" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="5" fill="#1E90FF" opacity="0.6"/>
+            </svg>
+            <div class="flex flex-col gap-0">
+              <span class="text-base font-bold text-navy leading-tight" style="font-family:'Outfit',sans-serif;">The Push Hub</span>
+              <span class="text-[10px] text-navy/50" style="font-family:'Rubik',sans-serif;">Derecho a ser exitoso</span>
+            </div>
           </div>
           <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Barcelona, España</p>
         </div>
@@ -479,23 +621,105 @@
       });
     });
 
-    function handleSubmit(e) {
+    // ═══ COUNTDOWN — fin de mes ═══
+    function startCountdown() {
+      const now = new Date();
+      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+
+      function update() {
+        const now = new Date();
+        const diff = endOfMonth - now;
+        if (diff <= 0) return;
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+
+        const inlineEl = document.getElementById('countdown-inline');
+        if (inlineEl) inlineEl.textContent = `${d}d ${h}h ${m}m`;
+      }
+      update();
+      setInterval(update, 1000);
+    }
+    startCountdown();
+
+    // ═══ LIVE VIEWERS — simula personas viendo ═══
+    function simulateViewers() {
+      const el = document.getElementById('live-viewers');
+      if (!el) return;
+      setInterval(() => {
+        const current = parseInt(el.textContent);
+        const change = Math.random() > 0.5 ? 1 : -1;
+        const next = Math.max(12, Math.min(24, current + change));
+        el.textContent = next;
+      }, 3000 + Math.random() * 5000);
+    }
+    simulateViewers();
+
+    // ═══ SOCIAL PROOF TOASTS — notificaciones de personas solicitando ═══
+    function socialProofToasts() {
+      const names = [
+        'María G.', 'Carlos R.', 'Ana P.', 'Javier M.', 'Laura S.',
+        'David T.', 'Marta L.', 'Andrés F.', 'Sofía V.', 'Pablo H.',
+        'Elena C.', 'Roberto A.', 'Carmen D.', 'Miguel B.', 'Isabel N.'
+      ];
+      const times = ['hace 2 min', 'hace 5 min', 'hace 8 min', 'hace 12 min', 'hace 15 min'];
+      const toast = document.getElementById('social-proof-toast');
+      const nameEl = document.getElementById('proof-name');
+      const timeEl = document.getElementById('proof-time');
+      if (!toast) return;
+
+      function show() {
+        nameEl.textContent = names[Math.floor(Math.random() * names.length)];
+        timeEl.textContent = times[Math.floor(Math.random() * times.length)];
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-4');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 4000);
+      }
+      setTimeout(show, 3000);
+      setInterval(show, 8000 + Math.random() * 7000);
+    }
+    socialProofToasts();
+
+    async function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('contact-form');
       const btn = form.querySelector('button[type="submit"]');
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-      const reto = document.getElementById('reto').value;
+      const btnText = document.getElementById('btn-text');
 
       btn.disabled = true;
+      btnText.textContent = 'Enviando...';
 
-      setTimeout(() => {
-        form.classList.add('hidden');
-        document.getElementById('success-msg').classList.remove('hidden');
-        const subject = encodeURIComponent('Solicitud Estudio Mercado - The Push Hub');
-        const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\nReto: ${reto}`);
-        window.location.href = `mailto:contacto@thepushub.com?subject=${subject}&body=${body}`;
-      }, 1200);
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+          form.classList.add('hidden');
+          document.getElementById('success-msg').classList.remove('hidden');
+        } else {
+          btnText.textContent = 'Error — intenta de nuevo';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btnText.textContent = 'Error — intenta de nuevo';
+        btn.disabled = false;
+      }
     }
   </script>
 </body>
