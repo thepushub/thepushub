@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Push Hub — Agencia de Marketing en Barcelona</title>
+  <meta name="description" content="Estrategia de mercado profesional. Para todos. Sin importar el presupuesto. Primer mes: estudio de mercado gratuito.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Rubik', 'sans-serif'],
+          },
+          colors: {
+            navy: '#0F4C81',
+            'navy-dark': '#0A3560',
+            electric: '#1E90FF',
+            'electric-dark': '#1070CC',
+            cloud: '#F0EEE9',
+            ink: '#1A1A1A',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Rubik', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+    .hero-bg { background: linear-gradient(135deg, #0A3560 0%, #0F4C81 50%, #1060A0 100%); }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F0EEE9; }
+    ::-webkit-scrollbar-thumb { background: #0F4C81; border-radius: 3px; }
+    .form-input:focus { outline: none; border-color: #1E90FF; box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15); }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #1E90FF; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .step-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15, 76, 129, 0.12); }
+    .testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15, 76, 129, 0.08); }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body class="bg-cloud text-ink overflow-x-hidden">
+
+  <!-- NAVEGACIÓN -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-navy/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#inicio" class="flex-shrink-0 cursor-pointer">
+          <img src="logo.png" alt="The Push Hub" class="h-12 md:h-14 w-auto object-contain" />
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#problema" class="nav-link text-sm font-500 text-ink/70 hover:text-navy transition-colors cursor-pointer">El Reto</a>
+          <a href="#proceso" class="nav-link text-sm font-500 text-ink/70 hover:text-navy transition-colors cursor-pointer">Proceso</a>
+          <a href="#servicios" class="nav-link text-sm font-500 text-ink/70 hover:text-navy transition-colors cursor-pointer">Servicios</a>
+          <a href="#contacto" class="nav-link text-sm font-500 text-ink/70 hover:text-navy transition-colors cursor-pointer">Contacto</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white text-sm font-600 px-5 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer" style="font-family: 'Outfit', sans-serif;">Estudio Gratis</a>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-navy/5 transition-colors cursor-pointer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F4C81" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-navy/10 bg-white">
+      <div class="px-4 py-4 space-y-1">
+        <a href="#problema" class="block px-4 py-2.5 text-sm font-500 text-ink/70 hover:text-navy hover:bg-navy/5 rounded-lg transition-colors cursor-pointer">El Reto</a>
+        <a href="#proceso" class="block px-4 py-2.5 text-sm font-500 text-ink/70 hover:text-navy hover:bg-navy/5 rounded-lg transition-colors cursor-pointer">Proceso</a>
+        <a href="#servicios" class="block px-4 py-2.5 text-sm font-500 text-ink/70 hover:text-navy hover:bg-navy/5 rounded-lg transition-colors cursor-pointer">Servicios</a>
+        <div class="pt-2 border-t border-navy/10">
+          <a href="#contacto" class="block w-full text-center bg-electric hover:bg-electric-dark text-white text-sm font-600 px-5 py-3 rounded-lg transition-colors cursor-pointer" style="font-family: 'Outfit', sans-serif;">Estudio Gratis</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero-bg min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="fade-up">
+          <div class="inline-flex items-center gap-2 mb-6">
+            <div class="w-8 h-px bg-electric"></div>
+            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase" style="font-family: 'Outfit', sans-serif;">Agencia de Marketing · Barcelona</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-900 text-white leading-[1.1] tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">
+            El derecho a ser<br>
+            <span class="text-electric">exitoso</span><br>
+            es de todos.
+          </h1>
+          <p class="text-white/75 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg" style="font-family: 'Rubik', sans-serif;">
+            No importa tu presupuesto. Tu negocio merece una estrategia ganadora. Investigamos primero, ejecutamos después. Nos adaptamos a tu realidad. Por eso nuestros clientes crecen.
+          </p>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+            <a href="#contacto" class="inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-electric/30 cursor-pointer" style="font-family: 'Outfit', sans-serif;">
+              Obtén tu Estudio Gratis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <p class="text-white/50 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Entregado en 10 días hábiles · Sin compromiso · Sin presión</p>
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+            <div class="w-2 h-2 rounded-full bg-electric animate-pulse"></div>
+            <span class="text-white/70 text-xs font-500" style="font-family: 'Rubik', sans-serif;">Limitado a 5 nuevos clientes por mes</span>
+          </div>
+        </div>
+        <div class="fade-up fade-up-delay-2 hidden lg:flex justify-center items-center">
+          <div class="relative w-full max-w-[520px] h-96 rounded-3xl overflow-hidden shadow-2xl shadow-navy/20">
+            <img src="hero-image.jpeg" alt="Market research and data analysis" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETO -->
+  <section id="problema" class="bg-cloud py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up flex items-center gap-3 mb-4">
+        <div class="w-6 h-px bg-electric"></div>
+        <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase" style="font-family: 'Outfit', sans-serif;">El Reto</span>
+      </div>
+      <div class="fade-up fade-up-delay-1 mb-16 max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Ejecutas sin entender por qué funciona.</h2>
+        <p class="text-ink/60 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">La mayoría de negocios invierten en marketing sin investigación. Gastan presupuesto en acciones sin base estratégica. Resulta: dinero perdido y clientes que no llegan.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="fade-up fade-up-delay-1 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
+          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">Gastas sin retorno</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Anuncios sin audiencia clara. Presupuesto desaparece.</p>
+        </div>
+        <div class="fade-up fade-up-delay-2 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
+          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">No sabes tu diferencial</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Tu producto es bueno. Tu mensaje, invisible.</p>
+        </div>
+        <div class="fade-up fade-up-delay-3 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
+          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">Visibilidad sin clientes</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Todos te ven. Nadie te compra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="bg-white py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up mb-16">
+        <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Nuestro Proceso</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Hub Core Strategy™</h2>
+        <p class="text-ink/60 text-lg mt-4" style="font-family: 'Rubik', sans-serif;">La ejecución sigue a la estrategia. Nunca al revés.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="fade-up fade-up-delay-1 step-card bg-cloud rounded-2xl p-8">
+          <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">01</span>
+          <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Descubrimiento</h3>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Entendemos tu negocio, objetivos y desafíos reales.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">30 minutos</div>
+        </div>
+        <div class="fade-up fade-up-delay-2 step-card bg-cloud rounded-2xl p-8">
+          <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">02</span>
+          <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Inteligencia de Mercado</h3>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Análisis profundo de mercado, competencia y audiencia.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">10 días hábiles</div>
+        </div>
+        <div class="fade-up fade-up-delay-3 step-card bg-cloud rounded-2xl p-8">
+          <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">03</span>
+          <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Sesión Estratégica</h3>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Compartimos hallazgos y co-creamos el plan juntos.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">1 hora</div>
+        </div>
+        <div class="fade-up fade-up-delay-4 step-card bg-navy rounded-2xl p-8">
+          <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">04</span>
+          <h3 class="text-base font-700 text-white uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Ejecución</h3>
+          <p class="text-white/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Implementamos solo lo que los datos respaldan.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">Ongoing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="bg-cloud py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up mb-16">
+        <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Clientes</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Negocios que ya crecen</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="fade-up fade-up-delay-1 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
+          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Pinchos Colgados</h3>
+          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante · Barcelona</p>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"Pasamos de no saber quién era nuestro cliente ideal a tener estrategia clara. Los resultados hablan."</p>
+        </div>
+        <div class="fade-up fade-up-delay-2 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
+          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Domo Burgers</h3>
+          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante · Barcelona</p>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"El estudio nos mostró oportunidades que no habíamos visto. Ahora sabemos dónde enfocar."</p>
+        </div>
+        <div class="fade-up fade-up-delay-3 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
+          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Camilo Abril</h3>
+          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Alcalde · Gestión Pública</p>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"La estrategia no es solo para empresas. Conseguimos resultados reales en comunicación pública."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="bg-white py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up mb-16">
+        <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Más allá de la estrategia</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-4" style="font-family: 'Outfit', sans-serif;">Servicios Complementarios</h2>
+        <p class="text-ink/60 text-lg" style="font-family: 'Rubik', sans-serif;">Cuando la estrategia está lista, ejecutamos. Con equipos profesionales.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="fade-up fade-up-delay-1 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">📱</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Gestión de Redes</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Community management, contenido, engagement. Marca viva cada día.</p>
+        </div>
+        <div class="fade-up fade-up-delay-2 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">🎬</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Producción de Contenido</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Video, fotografía, audio. Equipamiento profesional. Equipo creativo.</p>
+        </div>
+        <div class="fade-up fade-up-delay-3 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">💼</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Consultoría</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Asesoramiento estratégico, análisis de resultados, optimización.</p>
+        </div>
+        <div class="fade-up fade-up-delay-1 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">✍️</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Copywriting</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Textos que venden. Landing pages, campañas, email marketing.</p>
+        </div>
+        <div class="fade-up fade-up-delay-2 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">🎨</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Diseño & Branding</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Identidad visual, materiales de marca, assets con propósito.</p>
+        </div>
+        <div class="fade-up fade-up-delay-3 bg-cloud rounded-2xl p-8">
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Publicidad Digital</h3>
+          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Campañas en Meta, Google, TikTok. Optimizadas desde el día 1.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section id="oferta" class="hero-bg py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="fade-up">
+            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Primer Mes</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Estudio de Mercado<br><span class="text-electric">Gratuito.</span></h2>
+            <p class="text-white/70 text-lg leading-relaxed mb-8" style="font-family: 'Rubik', sans-serif;">Para los primeros clientes, hacemos tu estudio completo sin costo. Nuestra forma de demostrar valor.</p>
+            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3 mb-8">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <p class="text-white/80 text-sm" style="font-family: 'Rubik', sans-serif;">Normalmente <span class="text-electric font-600">€3,000–€5,000</span>. Gratis.</p>
+            </div>
+            <a href="#contacto" class="inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-electric/30 cursor-pointer" style="font-family: 'Outfit', sans-serif;">
+              Solicitar Ahora
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="fade-up fade-up-delay-2">
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+            <h3 class="text-white font-700 text-lg mb-6" style="font-family: 'Outfit', sans-serif;">Incluye:</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis DOFA</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Fortalezas, debilidades, oportunidades, amenazas.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Benchmarking Competitivo</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Top 3 competidores analizados en profundidad.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Segmentación de Audiencia</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Perfiles detallados de clientes ideales.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis de Keywords</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Búsquedas de tu audiencia y oportunidades SEO.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Estrategia de Canales</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Dónde está tu audiencia y cómo llegar.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                <div>
+                  <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">3 Oportunidades Clave</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Tus mayores oportunidades con acciones concretas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <p class="text-white/60 text-sm" style="font-family: 'Rubik', sans-serif;">Entregado en <span class="text-white font-600">10 días hábiles</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILOSOFÍA -->
+  <section class="bg-navy py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-up max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">El derecho a ser exitoso<br><span class="text-electric">es de todos.</span></h2>
+        <p class="text-white/70 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">No creemos que el presupuesto sea la barrera. Todo negocio merece crecer. Adaptamos nuestros servicios a tu realidad. Porque si tu negocio crece, el mercado gana. Y nosotros gozamos de ese éxito contigo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-cloud py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="fade-up mb-16">
+            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Empieza Hoy</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Cuéntanos tu reto.</h2>
+            <p class="text-ink/60 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">Sin compromiso. Sin presión. Solo información valiosa.</p>
+          </div>
+          <div class="fade-up space-y-3">
+            <div class="flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Respuesta en menos de 24h</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Estudio en 10 días hábiles</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Sin compromiso ni contrato</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Limitado a 5 clientes/mes</p>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up fade-up-delay-2">
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <form id="contact-form" class="space-y-6" onsubmit="handleSubmit(event)">
+              <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
+              <input type="email" id="email" name="email" required placeholder="Email empresarial" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
+              <select id="reto" name="reto" required class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm cursor-pointer" style="font-family: 'Rubik', sans-serif;">
+                <option value="">¿Cuál es tu mayor reto?</option>
+                <option value="bajas-ventas">Bajas ventas</option>
+                <option value="diferenciacion">No sé cómo diferenciarme</option>
+                <option value="sin-estrategia">Sin estrategia clara</option>
+                <option value="presupuesto">Gasto sin resultados</option>
+                <option value="otro">Otro</option>
+              </select>
+              <button type="submit" class="w-full bg-navy hover:bg-navy-dark text-white font-700 text-base py-4 rounded-xl transition-all cursor-pointer" style="font-family: 'Outfit', sans-serif;">
+                <span id="btn-text">Solicitar Estudio Gratuito</span>
+              </button>
+              <p class="text-center text-ink/40 text-xs" style="font-family: 'Rubik', sans-serif;">Responderemos en menos de 24 horas.</p>
+            </form>
+            <div id="success-msg" class="hidden text-center py-8">
+              <div class="w-16 h-16 bg-electric/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 class="text-navy font-700 text-xl" style="font-family: 'Outfit', sans-serif;">¡Recibido!</h3>
+              <p class="text-ink/60 text-sm mt-2" style="font-family: 'Rubik', sans-serif;">Nos ponemos en contacto en menos de 24 horas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="hero-bg py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <img src="logo.png" alt="The Push Hub" class="h-12 w-auto mb-3" />
+          <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Barcelona, España</p>
+        </div>
+        <div>
+          <p class="text-white/50 text-xs font-600 mb-4 uppercase" style="font-family: 'Outfit', sans-serif;">Síguenos</p>
+          <div class="flex flex-col gap-2">
+            <a href="https://www.instagram.com/pushub.es" target="_blank" class="text-white/60 hover:text-electric text-sm" style="font-family: 'Rubik', sans-serif;">Instagram</a>
+            <a href="https://www.facebook.com/share/1FdiCjNWPN" target="_blank" class="text-white/60 hover:text-electric text-sm" style="font-family: 'Rubik', sans-serif;">Facebook</a>
+            <a href="https://www.tiktok.com/@thepushub" target="_blank" class="text-white/60 hover:text-electric text-sm" style="font-family: 'Rubik', sans-serif;">TikTok</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-white/50 text-xs font-600 mb-4 uppercase" style="font-family: 'Outfit', sans-serif;">Contacto</p>
+          <a href="mailto:contacto@thepushub.com" class="text-white/60 hover:text-electric text-sm" style="font-family: 'Rubik', sans-serif;">contacto@thepushub.com</a>
+        </div>
+        <div>
+          <p class="text-white/50 text-xs font-600 mb-4 uppercase" style="font-family: 'Outfit', sans-serif;">Estado</p>
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-electric animate-pulse"></div>
+            <p class="text-white/60 text-sm" style="font-family: 'Rubik', sans-serif;">Aceptando clientes</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center">
+        <p class="text-white/20 text-xs mb-4" style="font-family: 'Rubik', sans-serif;">"La ejecución sigue a la estrategia. Nunca al revés."</p>
+        <p class="text-white/30 text-xs" style="font-family: 'Rubik', sans-serif;">© 2026 The Push Hub.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('shadow-md', window.scrollY > 20);
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          const offset = 80;
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const btn = form.querySelector('button[type="submit"]');
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const reto = document.getElementById('reto').value;
+
+      btn.disabled = true;
+
+      setTimeout(() => {
+        form.classList.add('hidden');
+        document.getElementById('success-msg').classList.remove('hidden');
+        const subject = encodeURIComponent('Solicitud Estudio Mercado - The Push Hub');
+        const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\nReto: ${reto}`);
+        window.location.href = `mailto:contacto@thepushub.com?subject=${subject}&body=${body}`;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
