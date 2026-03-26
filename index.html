@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Push Hub — Agencia de Marketing en Barcelona</title>
+  <title>The Push Hub — Agencia de Marketing Estratégico</title>
   <meta name="description" content="Estrategia de mercado profesional. Para todos. Sin importar el presupuesto. Primer mes: estudio de mercado gratuito.">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,6 +48,10 @@
     .step-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15, 76, 129, 0.12); }
     .testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15, 76, 129, 0.08); }
+    .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(15, 76, 129, 0.15); }
+    .service-icon { transition: transform 0.3s ease; }
+    .service-card:hover .service-icon { transform: scale(1.1); }
     @media (prefers-reduced-motion: reduce) {
       .fade-up { opacity: 1; transform: none; transition: none; }
     }
@@ -55,7 +59,7 @@
 </head>
 <body class="bg-cloud text-ink overflow-x-hidden">
 
-  <!-- NAVEGACIÓN -->
+  <!-- NAVEGACION -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm border-b border-navy/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
@@ -109,7 +113,7 @@
         <div class="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 rounded-full px-4 py-2 backdrop-blur-sm animate-pulse">
           <div class="w-2 h-2 rounded-full bg-red-400"></div>
           <span class="text-red-300 text-xs font-500" style="font-family:'Rubik',sans-serif;">
-            <span id="live-viewers">17</span> personas viendo esta página ahora
+            <span id="live-viewers">127</span> personas han visitado esta página hoy
           </span>
         </div>
         <div class="inline-flex items-center gap-2 bg-amber-500/15 border border-amber-500/30 rounded-full px-4 py-2 backdrop-blur-sm">
@@ -136,20 +140,20 @@
           </h1>
 
           <p class="text-white/55 text-lg leading-relaxed mb-8 max-w-lg" style="font-family:'Rubik',sans-serif;">
-            Este mes haremos <strong class="text-white font-600">20 estudios de mercado gratis</strong> — el mismo análisis que las grandes marcas pagan miles por tener. DOFA, benchmarking, segmentación, estrategia. Todo. Sin compromiso.
+            Este mes solo <strong class="text-white font-600">20 empresas</strong> podrán acceder a un estudio de mercado profesional sin costo — el mismo análisis que las grandes marcas pagan miles por tener. DOFA, benchmarking, segmentación, estrategia. Todo. Sin compromiso.
           </p>
 
           <!-- Barra de cupos -->
           <div class="mb-8 max-w-md">
             <div class="flex items-center justify-between mb-2">
-              <span class="text-white/50 text-xs" style="font-family:'Rubik',sans-serif;">Cupos ocupados este mes</span>
+              <span class="text-white/50 text-xs" style="font-family:'Rubik',sans-serif;">Solo 20 empresas podrán acceder este mes</span>
               <span class="text-white font-700 text-sm" style="font-family:'Outfit',sans-serif;"><span id="spots-taken">14</span> / 20</span>
             </div>
             <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
               <div id="spots-bar" class="h-full rounded-full transition-all duration-1000" style="width: 70%; background: linear-gradient(90deg, #1E90FF, #FF6B6B);"></div>
             </div>
             <p class="text-amber-400/80 text-xs mt-2 font-500" style="font-family:'Rubik',sans-serif;">
-              ⚡ Quedan <span id="spots-left" class="font-700">6</span> cupos — Se están agotando rápido
+              ⚡ Quedan <span id="spots-left" class="font-700">6</span> plazas — Se están agotando rápido
             </p>
           </div>
 
@@ -177,7 +181,7 @@
 
           <!-- Countdown grande -->
           <div class="text-center">
-            <p class="text-white/40 text-xs uppercase tracking-widest mb-4" style="font-family:'Outfit',sans-serif;">La oferta se cierra en</p>
+            <p class="text-white/40 text-xs uppercase tracking-widest mb-4" style="font-family:'Outfit',sans-serif;">Quedan</p>
             <div id="countdown" class="flex items-center gap-3">
               <div class="flex flex-col items-center">
                 <span id="cd-days" class="text-5xl font-900 text-white" style="font-family:'Outfit',sans-serif;">00</span>
@@ -240,7 +244,7 @@
             </div>
           </div>
 
-          <!-- Notificación social proof -->
+          <!-- Notificacion social proof -->
           <div id="social-proof-toast" class="w-full max-w-sm bg-white/5 border border-white/10 backdrop-blur-md rounded-xl px-4 py-3 flex items-center gap-3 transition-all duration-500 opacity-0 translate-y-4">
             <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -258,18 +262,29 @@
     </div>
   </section>
 
-  <!-- OFERTA -->
-  <section id="oferta" class="hero-bg py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- OFERTA — Estudio de Mercado explicado -->
+  <section id="oferta" class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(135deg, #0A3560 0%, #0F4C81 40%, #1060A0 80%, #0A3560 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.07]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.05]" style="background: radial-gradient(circle, #60B8FF 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="dots-oferta" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="white"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots-oferta)"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <div class="fade-up">
             <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Primer Mes</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Estudio de Mercado<br><span class="text-electric">Gratuito.</span></h2>
-            <p class="text-white/70 text-lg leading-relaxed mb-8" style="font-family: 'Rubik', sans-serif;">Para los primeros clientes, hacemos tu estudio completo sin costo. Nuestra forma de demostrar valor.</p>
-            <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-xl px-5 py-3 mb-8">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <p class="text-white/80 text-sm" style="font-family: 'Rubik', sans-serif;">Normalmente <span class="text-electric font-600">€800</span>. Para ti, gratis.</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">¿Qué es un Estudio<br>de Mercado y por qué<br><span class="text-electric">vale tanto?</span></h2>
+            <p class="text-white/70 text-lg leading-relaxed mb-6" style="font-family: 'Rubik', sans-serif;">Un estudio de mercado es como una radiografía completa de tu negocio y todo lo que lo rodea. Analizamos a fondo quiénes son tus clientes ideales, qué está haciendo tu competencia, dónde están las oportunidades que nadie ve, y cuáles son los puntos fuertes y débiles de tu marca.</p>
+            <p class="text-white/60 text-base leading-relaxed mb-6" style="font-family: 'Rubik', sans-serif;">Normalmente, este tipo de análisis lo hacen grandes consultoras para grandes empresas — y cobran <strong class="text-electric font-600">€800 o más</strong> por ello. Es el playbook que usan las marcas que dominan su mercado. La diferencia es que ahora, tú también puedes tenerlo.</p>
+            <div class="bg-white/5 border border-electric/20 rounded-xl p-5 mb-8">
+              <p class="text-white/80 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">
+                <span class="text-electric font-600">¿Por qué lo ofrecemos gratis?</span> Porque creemos que toda empresa, sin importar su tamaño, merece tener acceso a la información que necesita para crecer. Las grandes marcas pagan esto y más a consultoras para entender su mercado. Nosotros te lo ofrecemos sin costo porque si tu negocio crece, todos crecemos.
+              </p>
             </div>
             <a href="#contacto" class="inline-flex items-center gap-2 bg-electric hover:bg-electric-dark text-white font-700 text-base px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-electric/30 cursor-pointer" style="font-family: 'Outfit', sans-serif;">
               Solicitar Ahora
@@ -279,48 +294,48 @@
         </div>
         <div class="fade-up fade-up-delay-2">
           <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
-            <h3 class="text-white font-700 text-lg mb-6" style="font-family: 'Outfit', sans-serif;">Incluye:</h3>
+            <h3 class="text-white font-700 text-lg mb-6" style="font-family: 'Outfit', sans-serif;">Tu estudio incluye:</h3>
             <div class="space-y-4">
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis DOFA</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Fortalezas, debilidades, oportunidades, amenazas.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Descubrimos qué hace bien tu negocio, qué puede mejorar, dónde están las oportunidades y qué riesgos debes evitar.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Benchmarking Competitivo</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Top 3 competidores analizados en profundidad.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Estudiamos a tus 3 principales competidores: qué hacen, cómo comunican y dónde puedes superarlos.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Segmentación de Audiencia</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Perfiles detallados de clientes ideales.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Identificamos exactamente quién es tu cliente ideal, qué necesita y cómo hablarle para que te elija.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Análisis de Keywords</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Búsquedas de tu audiencia y oportunidades SEO.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Te decimos exactamente qué busca tu audiencia en internet y cómo puedes aparecer cuando te necesitan.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Estrategia de Canales</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Dónde está tu audiencia y cómo llegar.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Te mostramos dónde está tu audiencia (redes, Google, offline) y cómo llegar a ella con el menor esfuerzo.</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                 <div>
                   <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">3 Oportunidades Clave</p>
-                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Tus mayores oportunidades con acciones concretas.</p>
+                  <p class="text-white/50 text-xs" style="font-family: 'Rubik', sans-serif;">Te entregamos acciónes concretas que puedes ejecutar desde el día uno para empezar a ver resultados.</p>
                 </div>
               </div>
             </div>
@@ -335,206 +350,336 @@
   </section>
 
   <!-- RETO -->
-  <section id="problema" class="bg-cloud py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="problema" class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(180deg, #060E1A 0%, #0A2040 50%, #0F3A65 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full opacity-[0.06] -translate-y-1/2" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <div class="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full opacity-[0.04]" style="background: radial-gradient(circle, #FF6B6B 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.015]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="grid-reto" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 L 0 0 0 80" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid-reto)"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="fade-up flex items-center gap-3 mb-4">
         <div class="w-6 h-px bg-electric"></div>
         <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase" style="font-family: 'Outfit', sans-serif;">El Reto</span>
       </div>
-      <div class="fade-up fade-up-delay-1 mb-16 max-w-2xl">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Ejecutas sin entender por qué funciona.</h2>
-        <p class="text-ink/60 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">La mayoría de negocios invierten en marketing sin investigación. Gastan presupuesto en acciones sin base estratégica. Resulta: dinero perdido y clientes que no llegan.</p>
+      <div class="fade-up fade-up-delay-1 mb-16 max-w-3xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Tu negocio merece crecer,<br>pero <span class="text-electric">¿por dónde empezar?</span></h2>
+        <p class="text-white/50 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">La mayoría de negocios saben que necesitan marketing, pero no saben por donde empezar. Terminan gastando dinero en cosas que no funcionan porque nadie se tomó el tiempo de entender primero el terreno de juego.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="fade-up fade-up-delay-1 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
-          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">Gastas sin retorno</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Anuncios sin audiencia clara. Presupuesto desaparece.</p>
+        <div class="fade-up fade-up-delay-1 rounded-2xl p-8 border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #FF6B6B22, #FF6B6B08);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-white mb-3" style="font-family: 'Outfit', sans-serif;">Inviertes pero no ves resultados</h3>
+          <p class="text-white/45 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Pagas anuncios, publicas en redes, incluso contrataste a alguien... pero las ventas no suben. El problema no es cuánto gastas, sino que no sabes a quién le estás hablando.</p>
         </div>
-        <div class="fade-up fade-up-delay-2 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
-          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">No sabes tu diferencial</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Tu producto es bueno. Tu mensaje, invisible.</p>
+        <div class="fade-up fade-up-delay-2 rounded-2xl p-8 border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #FBBF2422, #FBBF2408);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-white mb-3" style="font-family: 'Outfit', sans-serif;">No sabes qué te hace diferente</h3>
+          <p class="text-white/45 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Tu producto o servicio es bueno — lo sabes. Pero cuando alguien te pregunta por qué debería elegirte a ti y no a la competencia, no tienes una respuestá clara que convenza.</p>
         </div>
-        <div class="fade-up fade-up-delay-3 bg-white rounded-2xl p-8 border-l-4 border-electric shadow-sm">
-          <h3 class="text-lg font-700 text-navy mb-3" style="font-family: 'Outfit', sans-serif;">Visibilidad sin clientes</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Todos te ven. Nadie te compra.</p>
+        <div class="fade-up fade-up-delay-3 rounded-2xl p-8 border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #1E90FF22, #1E90FF08);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-white mb-3" style="font-family: 'Outfit', sans-serif;">La gente te ve, pero no te compra</h3>
+          <p class="text-white/45 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Tienes seguidores, tienes visitas, la gente sabe que existes. Pero eso no se traduce en clientes reales. Falta una estrategia que convierta atención en ventas.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROCESO -->
-  <section id="proceso" class="bg-white py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-up mb-16">
+  <section id="proceso" class="relative bg-white py-24 md:py-32 overflow-hidden">
+    <!-- Decorative element -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.03] pointer-events-none" style="background: radial-gradient(circle, #0F4C81 0%, transparent 70%);"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="fade-up mb-6">
         <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Nuestro Proceso</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Hub Core Strategy™</h2>
-        <p class="text-ink/60 text-lg mt-4" style="font-family: 'Rubik', sans-serif;">La ejecución sigue a la estrategia. Nunca al revés.</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Hub Core Strategy&#8482;</h2>
+      </div>
+      <div class="fade-up mb-16 max-w-3xl">
+        <p class="text-ink/60 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">Nuestro método se basa en una idea simple: <strong class="text-navy font-600">antes de hacer nada, hay que entender todo</strong>. No creamos publicaciones bonitas sin saber por qué. No lanzamos anuncios sin saber a quien. Primero investigamos, luego diseñamos la estrategia contigo, y solo entonces ejecutamos. Así cada euro que inviertas tiene un propósito claro.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="fade-up fade-up-delay-1 step-card bg-cloud rounded-2xl p-8">
           <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">01</span>
-          <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Descubrimiento</h3>
-          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Entendemos tu negocio, objetivos y desafíos reales.</p>
-          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">30 minutos</div>
+          <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Reunión 1 a 1</h3>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Nos sentamos contigo el tiempo que haga falta para entender tu negocio de verdad. Tus retos, tus metas, tu día a día. Sin prisas.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">El tiempo que necesites</div>
         </div>
         <div class="fade-up fade-up-delay-2 step-card bg-cloud rounded-2xl p-8">
           <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">02</span>
           <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Inteligencia de Mercado</h3>
-          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Análisis profundo de mercado, competencia y audiencia.</p>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Investigamos todo: tu competencia, tu audiencia, las tendencias de tu sector. Es como tener un mapa completo antes de empezar el viaje.</p>
           <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">10 días hábiles</div>
         </div>
         <div class="fade-up fade-up-delay-3 step-card bg-cloud rounded-2xl p-8">
           <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">03</span>
           <h3 class="text-base font-700 text-navy uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Sesión Estratégica</h3>
-          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Compartimos hallazgos y co-creamos el plan juntos.</p>
-          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">1 hora</div>
+          <p class="text-ink/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Te presentamos todo lo que descubrimos y juntos diseñamos el plan de acción. Tú opinas, preguntas y decides. Nos tomamos el tiempo necesario.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">Sin límite de tiempo</div>
         </div>
         <div class="fade-up fade-up-delay-4 step-card bg-navy rounded-2xl p-8">
           <span class="text-electric text-4xl font-900" style="font-family: 'Outfit', sans-serif;">04</span>
           <h3 class="text-base font-700 text-white uppercase tracking-wide mt-6 mb-3" style="font-family: 'Outfit', sans-serif;">Ejecución</h3>
-          <p class="text-white/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Implementamos solo lo que los datos respaldan.</p>
-          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">Ongoing</div>
+          <p class="text-white/60 text-sm mb-4" style="font-family: 'Rubik', sans-serif;">Ahora si, manos a la obra. Pero solo hacemos lo que los datos respaldan. Cada acción tiene un porqué, cada euro invertido tiene un propósito.</p>
+          <div class="text-electric text-xs font-600" style="font-family: 'Outfit', sans-serif;">Continuo</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIOS -->
-  <section class="bg-cloud py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(180deg, #0A1628 0%, #0F2A4A 50%, #0A1E38 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-1/3 w-[400px] h-[400px] rounded-full opacity-[0.05]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="dots-test" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="white"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots-test)"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="fade-up mb-16">
         <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Clientes</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Negocios que ya crecen</h2>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em]" style="font-family: 'Outfit', sans-serif;">Negocios que ya crecen</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="fade-up fade-up-delay-1 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
-          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Pinchos Colgados</h3>
-          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante · Barcelona</p>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"Pasamos de no saber quién era nuestro cliente ideal a tener estrategia clara. Los resultados hablan."</p>
+        <div class="fade-up fade-up-delay-1 testimonial-card rounded-2xl p-8 border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);">
+          <div class="flex items-center gap-1 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="text-base font-700 text-white mb-1" style="font-family: 'Outfit', sans-serif;">Pinchos Colgados</h3>
+          <p class="text-xs text-white/40 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante</p>
+          <p class="text-white/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">"Pasamos de no saber quién era nuestro cliente ideal a tener estrategia clara. Los resultados hablan."</p>
         </div>
-        <div class="fade-up fade-up-delay-2 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
-          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Domo Burgers</h3>
-          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante · Barcelona</p>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"El estudio nos mostró oportunidades que no habíamos visto. Ahora sabemos dónde enfocar."</p>
+        <div class="fade-up fade-up-delay-2 testimonial-card rounded-2xl p-8 border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);">
+          <div class="flex items-center gap-1 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="text-base font-700 text-white mb-1" style="font-family: 'Outfit', sans-serif;">Domo Burgers</h3>
+          <p class="text-xs text-white/40 mb-4" style="font-family: 'Rubik', sans-serif;">Restaurante</p>
+          <p class="text-white/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">"El estudio nos mostró oportunidades que no habíamos visto. Ahora sabemos donde enfocar."</p>
         </div>
-        <div class="fade-up fade-up-delay-3 testimonial-card bg-white rounded-2xl p-8 shadow-sm">
-          <h3 class="text-base font-700 text-navy mb-1" style="font-family: 'Outfit', sans-serif;">Camilo Abril</h3>
-          <p class="text-xs text-ink/50 mb-4" style="font-family: 'Rubik', sans-serif;">Alcalde · Gestión Pública</p>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">"La estrategia no es solo para empresas. Conseguimos resultados reales en comunicación pública."</p>
+        <div class="fade-up fade-up-delay-3 testimonial-card rounded-2xl p-8 border border-electric/30" style="background: linear-gradient(135deg, rgba(30,144,255,0.12) 0%, rgba(30,144,255,0.04) 100%);">
+          <div class="flex items-center gap-1 mb-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3 class="text-base font-700 text-white mb-1" style="font-family: 'Outfit', sans-serif;">Camilo Abril</h3>
+          <p class="text-xs text-white/40 mb-4" style="font-family: 'Rubik', sans-serif;">Alcalde · Gestión Pública</p>
+          <p class="text-white/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">"Formamos parte del equipo que posicionó su candidatura, construyendo la estrategia de comunicación que lo llevó hasta la alcaldía."</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="bg-white py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="servicios" class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(180deg, #F0EEE9 0%, #E8E5DE 50%, #F0EEE9 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 left-0 w-[500px] h-[500px] rounded-full opacity-[0.04]" style="background: radial-gradient(circle, #0F4C81 0%, transparent 70%);"></div>
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.03]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="fade-up mb-16">
         <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Más allá de la estrategia</span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-4" style="font-family: 'Outfit', sans-serif;">Servicios Complementarios</h2>
-        <p class="text-ink/60 text-lg" style="font-family: 'Rubik', sans-serif;">Cuando la estrategia está lista, ejecutamos. Con equipos profesionales.</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-4" style="font-family: 'Outfit', sans-serif;">Todo lo que tu negocio necesita</h2>
+        <p class="text-ink/60 text-lg max-w-2xl" style="font-family: 'Rubik', sans-serif;">Cuando la estrategia está clara, la ejecución es poderosa. Estos son los servicios con los que hacemos crecer tu marca.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="fade-up fade-up-delay-1 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">📱</div>
-          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Gestión de Redes</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Community management, contenido, engagement. Marca viva cada día.</p>
+        <div class="fade-up fade-up-delay-1 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #1E90FF15, #1E90FF08);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2m2 0h2"/><path d="M7 11h6"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Gestión de Redes Sociales</h3>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Nos encargamos de tus redes para que tú te enfoques en tu negocio. Creamos contenido, respondemos a tu comunidad y hacemos que tu marca este activa y conectada todos los días.</p>
         </div>
-        <div class="fade-up fade-up-delay-2 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">🎬</div>
+        <div class="fade-up fade-up-delay-2 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #FF6B6B15, #FF6B6B08);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
           <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Producción de Contenido</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Video, fotografía, audio. Equipamiento profesional. Equipo creativo.</p>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Videos, fotos y audio profesional para que tu marca se vea como se merece. Desde reels para redes hasta sesiones completas de producto. Equipo creativo y equipamiento incluido.</p>
         </div>
-        <div class="fade-up fade-up-delay-3 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">💼</div>
-          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Consultoría</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Asesoramiento estratégico, análisis de resultados, optimización.</p>
+        <div class="fade-up fade-up-delay-3 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #34D39915, #34D39908);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Consultoría Estratégica</h3>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Te acompañamos como tu departamento de marketing externo. Analizamos resultados, ajustamos estrategias y te damos claridad para tomar mejores decisiones de negocio.</p>
         </div>
-        <div class="fade-up fade-up-delay-1 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">✍️</div>
-          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Copywriting</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Textos que venden. Landing pages, campañas, email marketing.</p>
+        <div class="fade-up fade-up-delay-1 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #FBBF2415, #FBBF2408);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Copywriting y Textos</h3>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Escribimos los textos que hacen que la gente actúe: páginas web que convencen, emails que se abren, anuncios que venden. Palabras con propósito y resultados medibles.</p>
         </div>
-        <div class="fade-up fade-up-delay-2 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">🎨</div>
-          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Diseño & Branding</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Identidad visual, materiales de marca, assets con propósito.</p>
+        <div class="fade-up fade-up-delay-2 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #A78BFA15, #A78BFA08);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/><path d="M8 12h8"/><path d="M12 2a4 4 0 014 4"/></svg>
+          </div>
+          <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Diseño y Branding</h3>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Creamos o renovamos la identidad visual de tu marca para que transmita exactamente lo que eres. Logo, colores, tipografía y todos los materiales que necesitas para destacar.</p>
         </div>
-        <div class="fade-up fade-up-delay-3 bg-cloud rounded-2xl p-8">
-          <div class="text-3xl mb-4">📊</div>
+        <div class="fade-up fade-up-delay-3 service-card bg-white rounded-2xl p-8 border border-navy/5 shadow-sm">
+          <div class="service-icon w-14 h-14 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, #F472B615, #F472B608);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/><rect x="1" y="1" width="22" height="22" rx="4"/></svg>
+          </div>
           <h3 class="text-lg font-700 text-navy mb-2" style="font-family: 'Outfit', sans-serif;">Publicidad Digital</h3>
-          <p class="text-ink/60 text-sm" style="font-family: 'Rubik', sans-serif;">Campañas en Meta, Google, TikTok. Optimizadas desde el día 1.</p>
+          <p class="text-ink/60 text-sm leading-relaxed" style="font-family: 'Rubik', sans-serif;">Creamos y gestionamos tus campañas en Meta, Google y TikTok. Cada anuncio está diseñado con datos reales de tu mercado, para que llegues a las personas correctas sin desperdiciar presupuesto.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FILOSOFÍA -->
-  <section class="bg-navy py-20 md:py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <!-- FILOSOFIA -->
+  <section class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(135deg, #060E1A 0%, #0A2040 40%, #0F4C81 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.06]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="dots-phil" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="white"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots-phil)"/>
+      </svg>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <div class="fade-up max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">El derecho a ser exitoso<br><span class="text-electric">es de todos.</span></h2>
-        <p class="text-white/70 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">No creemos que el presupuesto sea la barrera. Todo negocio merece crecer. Adaptamos nuestros servicios a tu realidad. Porque si tu negocio crece, el mercado gana. Y nosotros gozamos de ese éxito contigo.</p>
+        <div class="inline-flex items-center gap-2 bg-electric/15 border border-electric/25 rounded-full px-5 py-2 mb-8">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span class="text-electric text-xs font-600 tracking-wider uppercase" style="font-family: 'Outfit', sans-serif;">Nuestra Filosofía</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-white leading-tight tracking-[-0.02em] mb-8" style="font-family: 'Outfit', sans-serif;">El derecho al éxito<br><span class="text-electric">es de todos.</span></h2>
+        <p class="text-white/60 text-lg leading-relaxed mb-6" style="font-family: 'Rubik', sans-serif;">Creemos firmemente que el tamaño de tu billetera no debería determinar el tamaño de tu éxito. Las herramientas, la estrategia y el conocimiento que usan las grandes marcas no deberían ser un privilegio — deberían estar al alcance de cualquier negocio con ganas de crecer.</p>
+        <p class="text-white/50 text-base leading-relaxed mb-8" style="font-family: 'Rubik', sans-serif;">Por eso adaptamos nuestros servicios a la realidad de cada cliente. Si tu presupuesto es limitado, encontramos la forma. Si tu negocio está empezando, te acompañamos desde cero. Porque cuando tu creces, nosotros crecemos. Tu éxito es nuestro éxito. Así de simple.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-6 py-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-white/70 text-sm" style="font-family: 'Rubik', sans-serif;">Presupuesto flexible</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-6 py-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-white/70 text-sm" style="font-family: 'Rubik', sans-serif;">Sin barreras de entrada</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-6 py-4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-white/70 text-sm" style="font-family: 'Rubik', sans-serif;">Crecemos juntos</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="bg-cloud py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="contacto" class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(180deg, #0A1628 0%, #0F2847 50%, #0F4C81 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.08]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.05]" style="background: radial-gradient(circle, #1E90FF 0%, transparent 70%);"></div>
+      <svg class="absolute inset-0 w-full h-full opacity-[0.02]" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="grid-contact" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid-contact)"/>
+      </svg>
+      <!-- Animated pulse ring -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-electric/5 animate-pulse"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Big CTA headline centered -->
+      <div class="fade-up text-center mb-16">
+        <div class="inline-flex items-center gap-2 bg-electric/10 border border-electric/20 rounded-full px-5 py-2 mb-8">
+          <span class="w-2 h-2 bg-electric rounded-full animate-pulse"></span>
+          <span class="text-electric text-xs font-600 tracking-wider uppercase" style="font-family: 'Outfit', sans-serif;">Cupos limitados — Solo 20 empresas este mes</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-800 text-white leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Cuéntanos tu reto.<br><span class="text-electric">Nosotros ponemos la estrategia.</span></h2>
+        <p class="text-white/50 text-lg leading-relaxed max-w-2xl mx-auto" style="font-family: 'Rubik', sans-serif;">Sin compromiso. Sin presión. Solo información valiosa para que tu negocio dé el siguiente paso con claridad.</p>
+      </div>
       <div class="grid lg:grid-cols-2 gap-16 items-start">
         <div>
-          <div class="fade-up mb-16">
-            <span class="text-electric text-xs font-600 tracking-[0.2em] uppercase mb-4 inline-block" style="font-family: 'Outfit', sans-serif;">Empieza Hoy</span>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-800 text-navy leading-tight tracking-[-0.02em] mb-6" style="font-family: 'Outfit', sans-serif;">Cuéntanos tu reto.</h2>
-            <p class="text-ink/60 text-lg leading-relaxed" style="font-family: 'Rubik', sans-serif;">Sin compromiso. Sin presión. Solo información valiosa.</p>
-          </div>
-          <div class="fade-up space-y-3">
-            <div class="flex items-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Respuesta en menos de 24h</p>
+          <div class="fade-up space-y-5">
+            <div class="flex items-start gap-4 p-4 rounded-xl border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #1E90FF22, #1E90FF08);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Respuesta en menos de 24h</p>
+                <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Nos tomamos tu tiempo en serio.</p>
+              </div>
             </div>
-            <div class="flex items-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Estudio en 10 días hábiles</p>
+            <div class="flex items-start gap-4 p-4 rounded-xl border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #10B98122, #10B98108);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Estudio listo en 10 días hábiles</p>
+                <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Un análisis profundo, no un PDF genérico.</p>
+              </div>
             </div>
-            <div class="flex items-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Sin compromiso ni contrato</p>
+            <div class="flex items-start gap-4 p-4 rounded-xl border border-white/10" style="background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #FBBF2422, #FBBF2408);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">Sin compromiso ni contrato</p>
+                <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Si no te convence, no nos debes nada.</p>
+              </div>
             </div>
-            <div class="flex items-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <p class="text-ink/70 text-sm" style="font-family: 'Rubik', sans-serif;">Limitado a 20 estudios gratis/mes</p>
+            <div class="flex items-start gap-4 p-4 rounded-xl border border-electric/20" style="background: linear-gradient(135deg, rgba(30,144,255,0.12) 0%, rgba(30,144,255,0.04) 100%);">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, #1E90FF33, #1E90FF11);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <p class="text-electric font-600 text-sm mb-1" style="font-family: 'Outfit', sans-serif;">100% gratis — sin trampa</p>
+                <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Un estudio que otros cobrarían +€500.</p>
+              </div>
             </div>
           </div>
         </div>
         <div class="fade-up fade-up-delay-2">
-          <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="rounded-2xl p-8 border border-white/10 shadow-2xl" style="background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.04) 100%); backdrop-filter: blur(20px);">
             <form id="contact-form" class="space-y-6" onsubmit="handleSubmit(event)">
               <input type="hidden" name="access_key" value="e271cd92-0175-4dbe-bec4-c0b50b383d3a">
               <input type="hidden" name="subject" value="Nueva solicitud - Estudio de Mercado Gratis">
               <input type="hidden" name="from_name" value="The Push Hub Landing">
-              <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
-              <input type="email" id="email" name="email" required placeholder="Email empresarial" class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm" style="font-family: 'Rubik', sans-serif;"/>
-              <select id="reto" name="reto" required class="form-input w-full px-4 py-3.5 rounded-xl border border-navy/15 bg-cloud/50 text-ink text-sm cursor-pointer" style="font-family: 'Rubik', sans-serif;">
-                <option value="">¿Cuál es tu mayor reto?</option>
-                <option value="bajas-ventas">Bajas ventas</option>
-                <option value="diferenciacion">No sé cómo diferenciarme</option>
-                <option value="sin-estrategia">Sin estrategia clara</option>
-                <option value="presupuesto">Gasto sin resultados</option>
-                <option value="otro">Otro</option>
+              <input type="text" id="nombre" name="nombre" required placeholder="Nombre completo" class="form-input w-full px-4 py-3.5 rounded-xl border border-white/15 bg-white/10 text-white text-sm placeholder-white/40" style="font-family: 'Rubik', sans-serif;"/>
+              <input type="email" id="email" name="email" required placeholder="Email empresarial" class="form-input w-full px-4 py-3.5 rounded-xl border border-white/15 bg-white/10 text-white text-sm placeholder-white/40" style="font-family: 'Rubik', sans-serif;"/>
+              <select id="reto" name="reto" required class="form-input w-full px-4 py-3.5 rounded-xl border border-white/15 bg-white/10 text-white text-sm cursor-pointer" style="font-family: 'Rubik', sans-serif;">
+                <option value="" class="text-ink">¿Cuál es tu mayor reto?</option>
+                <option value="bajas-ventas" class="text-ink">Bajas ventas</option>
+                <option value="diferenciacion" class="text-ink">No sé cómo diferenciarme</option>
+                <option value="sin-estrategia" class="text-ink">Sin estrategia clara</option>
+                <option value="presupuesto" class="text-ink">Gasto sin resultados</option>
+                <option value="otro" class="text-ink">Otro</option>
               </select>
-              <button type="submit" class="w-full bg-navy hover:bg-navy-dark text-white font-700 text-base py-4 rounded-xl transition-all cursor-pointer" style="font-family: 'Outfit', sans-serif;">
-                <span id="btn-text">Solicitar Estudio Gratuito</span>
+              <button type="submit" class="w-full bg-electric hover:bg-blue-400 text-white font-700 text-base py-4 rounded-xl transition-all cursor-pointer shadow-lg shadow-electric/25" style="font-family: 'Outfit', sans-serif;">
+                <span id="btn-text">Solicitar Estudio Gratuito →</span>
               </button>
-              <p class="text-center text-ink/40 text-xs" style="font-family: 'Rubik', sans-serif;">Responderemos en menos de 24 horas.</p>
+              <p class="text-center text-white/30 text-xs" style="font-family: 'Rubik', sans-serif;">Responderemos en menos de 24 horas.</p>
             </form>
             <div id="success-msg" class="hidden text-center py-8">
-              <div class="w-16 h-16 bg-electric/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="w-16 h-16 bg-electric/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E90FF" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <h3 class="text-navy font-700 text-xl" style="font-family: 'Outfit', sans-serif;">¡Recibido!</h3>
-              <p class="text-ink/60 text-sm mt-2" style="font-family: 'Rubik', sans-serif;">Nos ponemos en contacto en menos de 24 horas.</p>
+              <h3 class="text-white font-700 text-xl" style="font-family: 'Outfit', sans-serif;">¡Recibido!</h3>
+              <p class="text-white/60 text-sm mt-2" style="font-family: 'Rubik', sans-serif;">Nos ponemos en contacto en menos de 24 horas.</p>
             </div>
           </div>
         </div>
@@ -558,10 +703,10 @@
             </svg>
             <div class="flex flex-col gap-0">
               <span class="text-base font-bold text-navy leading-tight" style="font-family:'Outfit',sans-serif;">The Push Hub</span>
-              <span class="text-[10px] text-navy/50" style="font-family:'Rubik',sans-serif;">Derecho a ser exitoso</span>
+              <span class="text-[10px] text-navy/50" style="font-family:'Rubik',sans-serif;">Derecho a ser éxitoso</span>
             </div>
           </div>
-          <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Barcelona, España</p>
+          <p class="text-white/40 text-xs" style="font-family: 'Rubik', sans-serif;">Marketing con estrategia</p>
         </div>
         <div>
           <p class="text-white/50 text-xs font-600 mb-4 uppercase" style="font-family: 'Outfit', sans-serif;">Síguenos</p>
@@ -584,7 +729,8 @@
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 text-center">
-        <p class="text-white/20 text-xs mb-4" style="font-family: 'Rubik', sans-serif;">"La ejecución sigue a la estrategia. Nunca al revés."</p>
+        <p class="text-white/30 text-sm mb-1" style="font-family: 'Outfit', sans-serif; font-weight: 600;">El derecho al éxito es de todos.</p>
+        <p class="text-white/15 text-xs italic mb-4" style="font-family: 'Rubik', sans-serif;">Inside your brand. Behind your growth.</p>
         <p class="text-white/30 text-xs" style="font-family: 'Rubik', sans-serif;">© 2026 The Push Hub.</p>
       </div>
     </div>
@@ -621,15 +767,35 @@
       });
     });
 
-    // ═══ COUNTDOWN — fin de mes ═══
+    // ═══ COUNTDOWN — 10-day rotating timer ═══
     function startCountdown() {
-      const now = new Date();
-      const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      const TEN_DAYS_MS = 10 * 24 * 60 * 60 * 1000;
+      const storageKey = 'tph_countdown_start';
+
+      function getTargetDate() {
+        let startStr = localStorage.getItem(storageKey);
+        let start = startStr ? new Date(startStr) : null;
+        const now = new Date();
+
+        if (!start || (now - start) >= TEN_DAYS_MS) {
+          start = now;
+          localStorage.setItem(storageKey, start.toISOString());
+        }
+
+        return new Date(start.getTime() + TEN_DAYS_MS);
+      }
+
+      let target = getTargetDate();
 
       function update() {
         const now = new Date();
-        const diff = endOfMonth - now;
-        if (diff <= 0) return;
+        let diff = target - now;
+
+        if (diff <= 0) {
+          localStorage.removeItem(storageKey);
+          target = getTargetDate();
+          diff = target - now;
+        }
 
         const d = Math.floor(diff / 86400000);
         const h = Math.floor((diff % 86400000) / 3600000);
@@ -649,16 +815,57 @@
     }
     startCountdown();
 
-    // ═══ LIVE VIEWERS — simula personas viendo ═══
+    // ═══ DAILY VISITORS — visitas proporcionales a la hora del día ═══
     function simulateViewers() {
       const el = document.getElementById('live-viewers');
       if (!el) return;
+      const now = new Date();
+      const hour = now.getHours();
+      const minuteProgress = now.getMinutes() / 60;
+      // Curva realista: pocas visitas temprano, pico en la noche
+      const hourlyMax = [
+        5,   // 00:00 - madrugada
+        3,   // 01:00
+        2,   // 02:00
+        1,   // 03:00
+        1,   // 04:00
+        2,   // 05:00
+        8,   // 06:00
+        15,  // 07:00
+        25,  // 08:00
+        35,  // 09:00
+        45,  // 10:00
+        55,  // 11:00
+        60,  // 12:00
+        55,  // 13:00 - hora de comer baja un poco
+        50,  // 14:00
+        55,  // 15:00
+        65,  // 16:00
+        80,  // 17:00
+        100, // 18:00
+        130, // 19:00
+        155, // 20:00
+        170, // 21:00 - pico
+        140, // 22:00
+        80   // 23:00
+      ];
+      // Acumulado hasta la hora actual + proporción del minuto actual
+      let accumulated = 0;
+      for (let h = 0; h < hour; h++) accumulated += hourlyMax[h];
+      accumulated += Math.floor(hourlyMax[hour] * minuteProgress);
+      // Variación aleatoria ±10%
+      const variation = Math.floor(accumulated * (0.9 + Math.random() * 0.2));
+      el.textContent = Math.max(variation, 1);
+      // Incremento gradual cada 15-30 segundos
       setInterval(() => {
         const current = parseInt(el.textContent);
-        const change = Math.random() > 0.5 ? 1 : -1;
-        const next = Math.max(12, Math.min(24, current + change));
-        el.textContent = next;
-      }, 3000 + Math.random() * 5000);
+        const hourNow = new Date().getHours();
+        // Incremento proporcional a la actividad de la hora actual
+        const rate = hourlyMax[hourNow] / 60;
+        if (Math.random() < rate / 4) {
+          el.textContent = current + Math.floor(Math.random() * 2) + 1;
+        }
+      }, 15000 + Math.random() * 15000);
     }
     simulateViewers();
 
